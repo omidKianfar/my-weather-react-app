@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 import WeatherForm from "./components/WeatherForm";
 import WeatherList from "./components/WeatherList";
+import Auxx from "./Tools/Auxx";
+import { Focus } from "./Tools/Focus";
+import { weatherContext } from "./hocs/Context";
 
 function App() {
   // state ----------------------------------------------
@@ -28,13 +31,19 @@ function App() {
       .then((result) => setWeather(result));
   };
 
+  const refCity = Focus(city);
+
   return (
-    <div>
+    <Auxx>
       <main>
-        <WeatherForm searchCity={searchCity} city={city} setCity={setCity} />
-        <WeatherList weather={weather} />
+        <weatherContext.Provider
+          value={{ searchCity, city, setCity, refCity, weather }}
+        >
+          <WeatherForm />
+          <WeatherList />
+        </weatherContext.Provider>
       </main>
-    </div>
+    </Auxx>
   );
 }
 
