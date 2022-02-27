@@ -1,21 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
-  // state ---------------------------------------
+  // state ----------------------------------------------
   const [city, setCity] = useState("");
+  const [weather, setWeather] = useState({});
+
+  // api detailes ---------------------------------------
+  const apiDetailes = {
+    key: "f84377c9d5764f0c9a558763d11f1083",
+    base: "https://api.openweathermap.org/data/2.5/",
+  };
+
+  // func -----------------------------------------------
+  const searchCity = (e) => {
+    e.preventDefault();
+    fetch(`${apiDetailes.base}weather?q=${city}&appid=${apiDetailes.key}`)
+      .then((response) => response.json())
+      .then((result) => {
+        setWeather(result);
+        setCity("");
+      });
+  };
 
   return (
     <div>
       <main>
         <section>
-          <input
-            type="text"
-            placeholder="EnterCity"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
+          <form onSubmit={searchCity}>
+            <input
+              type="text"
+              placeholder="EnterCity"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            />
+            <input type="submit" value="Search" />
+          </form>
         </section>
-        <section>Weather detailes</section>
       </main>
     </div>
   );
