@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import WeatherForm from "./components/WeatherForm";
+import WeatherList from "./components/WeatherList";
+
 function App() {
   // state ----------------------------------------------
   const [city, setCity] = useState("");
@@ -14,45 +17,22 @@ function App() {
   // func -----------------------------------------------
   const searchCity = (e) => {
     e.preventDefault();
-    fetch(`${apiDetailes.base}weather?q=${city}&appid=${apiDetailes.key}`)
+    fetchApi();
+    setCity("");
+  };
+
+  const fetchApi = () => {
+    const url = `${apiDetailes.base}weather?q=${city}&appid=${apiDetailes.key}`;
+    fetch(url)
       .then((response) => response.json())
-      .then((result) => {
-        setWeather(result);
-        setCity("");
-      });
+      .then((result) => setWeather(result));
   };
 
   return (
     <div>
       <main>
-        <section>
-          <form onSubmit={searchCity}>
-            <input
-              type="text"
-              placeholder="EnterCity"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-            />
-            <input type="submit" value="Search" />
-          </form>
-        </section>
-        <section>
-          {weather.main ? (
-            <div>
-              <div>
-                <div>{weather.name}</div>
-                <div>{new Date().toDateString()}</div>
-                <div>{weather.weather[0].main}</div>
-                <div>
-                  <div>{Math.round(weather.main.temp - 273)}° centigrade </div>
-                  <div> {Math.round(weather.main.temp)}° Celsius</div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            ""
-          )}
-        </section>
+        <WeatherForm searchCity={searchCity} city={city} setCity={setCity} />
+        <WeatherList weather={weather} />
       </main>
     </div>
   );
