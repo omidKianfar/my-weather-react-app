@@ -1,7 +1,7 @@
-import { fetchApi } from "../Hooks/FetchApi";
+import { getApiData } from "../Hooks/FetchApi";
 
 export const searchCity = (e, props) => {
   e.preventDefault();
-  fetchApi(props);
+  getApiData(props);
   props.setCity("");
 };
