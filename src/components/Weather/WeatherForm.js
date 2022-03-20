@@ -1,5 +1,6 @@
-import { weatherContext } from "../Hooks/Context";
-import { searchCity } from "../Tools/SearchCity";
+import { Fragment } from "react";
+import { weatherContext } from "../../Hooks/Context";
+import { searchCity } from "../../Tools/SearchCity";
 
 const WeatherForm = () => {
   return (

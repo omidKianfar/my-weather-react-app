@@ -1,4 +1,5 @@
-import { weatherContext } from "../Hooks/Context";
+import { Fragment } from "react";
+import { weatherContext } from "../../Hooks/Context";
 
 const WeatherList = () => {
   return (
