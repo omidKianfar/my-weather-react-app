@@ -1,15 +1,17 @@
 import React from "react";
-import { weatherContext } from "../hocs/Context";
+import { weatherContext } from "../Hooks/Context";
 import Auxx from "../Tools/Auxx";
+import { searchCity } from "../Tools/SearchCity";
 
 const WeatherForm = () => {
   return (
     <Auxx>
       <weatherContext.Consumer>
-        {({ searchCity, city, setCity, refCity }) => {
+        {(contetxProps) => {
+          const { city, setCity, refCity } = contetxProps;
           return (
             <section>
-              <form onSubmit={searchCity}>
+              <form onSubmit={(e) => searchCity(e, contetxProps)}>
                 <input
                   type="text"
                   placeholder="EnterCity"
