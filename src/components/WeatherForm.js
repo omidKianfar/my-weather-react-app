@@ -1,11 +1,9 @@
-import React from "react";
 import { weatherContext } from "../Hooks/Context";
-import Auxx from "../Tools/Auxx";
 import { searchCity } from "../Tools/SearchCity";
 
 const WeatherForm = () => {
   return (
-    <Auxx>
+    <Fragment>
       <weatherContext.Consumer>
         {(contetxProps) => {
           const { city, setCity, refCity } = contetxProps;
@@ -25,7 +23,7 @@ const WeatherForm = () => {
           );
         }}
       </weatherContext.Consumer>
-    </Auxx>
+    </Fragment>
   );
 };
 export default WeatherForm;

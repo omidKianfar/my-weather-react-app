@@ -1,21 +1,18 @@
-import React, { useState } from "react";
+import { Fragment, useState } from "react";
 
+import { weatherContext } from "./Hooks/Context";
+import { Focus } from "./Tools/Focus";
 import WeatherForm from "./components/WeatherForm";
 import WeatherList from "./components/WeatherList";
-import Auxx from "./Tools/Auxx";
-import { Focus } from "./Tools/Focus";
-import { weatherContext } from "./Hooks/Context";
-import { fetchApi } from "./Hooks/FetchApi";
 
 function App() {
-  // state ----------------------------------------------
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
 
   const refCity = Focus(city);
 
   return (
-    <Auxx>
+    <Fragment>
       <div
       // className={
       //   weather.main ? (weather.main.temp > 273 ? "app warm" : "app") : "app"
@@ -30,7 +27,7 @@ function App() {
           </weatherContext.Provider>
         </main>
       </div>
-    </Auxx>
+    </Fragment>
   );
 }
 

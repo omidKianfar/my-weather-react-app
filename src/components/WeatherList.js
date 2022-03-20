@@ -1,10 +1,8 @@
-import React from "react";
-import { weatherContext } from "../hocs/Context";
-import Auxx from "../Tools/Auxx";
+import { weatherContext } from "../Hooks/Context";
 
 const WeatherList = () => {
   return (
-    <Auxx>
+    <Fragment>
       <weatherContext.Consumer>
         {({ weather }) => {
           return (
@@ -30,7 +28,7 @@ const WeatherList = () => {
           );
         }}
       </weatherContext.Consumer>
-    </Auxx>
+    </Fragment>
   );
 };
 export default WeatherList;
