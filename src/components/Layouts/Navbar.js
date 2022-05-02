@@ -1,24 +1,33 @@
 import { Fragment } from "react";
 
-import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
+import { BrowserRouter, NavLink, Switch, Route } from "react-router-dom";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
 import Main from "./Main";
 import About from "./About";
 
-const Navbar = () => {
+const NavbarMenu = () => {
+  const NavLinkClass = ["text-decoration-none text-light fw-bold"];
   return (
     <BrowserRouter>
       <Fragment>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
+        <Navbar className="mb-3 shadow" bg="dark" variant="dark">
+          <Container>
+            <Nav className="me-auto">
+              <Nav.Link>
+                <NavLink className={`${NavLinkClass}`} to="/">
+                  Home
+                </NavLink>
+              </Nav.Link>
+              <Nav.Link>
+                <NavLink className={`${NavLinkClass}`} to="/about">
+                  About
+                </NavLink>
+              </Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/about" component={About} />
@@ -27,4 +36,4 @@ const Navbar = () => {
     </BrowserRouter>
   );
 };
-export default Navbar;
+export default NavbarMenu;
