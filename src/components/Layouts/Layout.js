@@ -2,11 +2,13 @@ import { Fragment, useState } from "react";
 
 import { weatherContext } from "../../Hooks/Context";
 import { Focus } from "../../Tools/Focus";
-import Navbar from "./Navbar";
+import NavbarMenu from "./Navbar";
 
 function Layout() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
+  const [sky, setSky] = useState(null);
+  const [HowSky, setHowSky] = useState("");
 
   //   default focus on input
   const refCity = Focus(city);
@@ -14,9 +16,19 @@ function Layout() {
   return (
     <Fragment>
       <weatherContext.Provider
-        value={{ city, setCity, refCity, weather, setWeather }}
+        value={{
+          city,
+          setCity,
+          refCity,
+          weather,
+          setWeather,
+          sky,
+          setSky,
+          HowSky,
+          setHowSky,
+        }}
       >
-        <Navbar></Navbar>
+        <NavbarMenu></NavbarMenu>
       </weatherContext.Provider>
     </Fragment>
   );
