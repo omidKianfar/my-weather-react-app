@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { BrowserRouter, NavLink, Switch, Route } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 
-import Main from "./Main";
+import Main from "./Main/Main";
 import About from "./About";
 
 const NavbarMenu = () => {
@@ -11,7 +11,7 @@ const NavbarMenu = () => {
   return (
     <BrowserRouter>
       <Fragment>
-        <Navbar className="mb-3 shadow" bg="dark" variant="dark">
+        <Navbar className=" shadow" bg="dark" variant="dark">
           <Container>
             <Nav className="me-auto">
               <Nav.Link>
