@@ -1,0 +1,16 @@
+.main {
+    background-image: url('./Img/qQa5Pd7.jpg');
+}
+
+.warm {
+    background-image: url('./Img/warm-bg.jpg');
+}
+
+.cold {
+    background-image: url('./Img/cold-bg.jpg');
+}
+
+:is(.main, .warm, .cold) {
+    background-size: 100% 100%;
+    height: 500px;
+}
