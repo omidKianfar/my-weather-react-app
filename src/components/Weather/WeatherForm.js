@@ -1,30 +1,37 @@
-import { Fragment } from "react";
+import { Form, Row, Button } from "react-bootstrap";
+
 import { weatherContext } from "../../Hooks/Context";
+
 import { searchCity } from "../../Tools/SearchCity";
 
 const WeatherForm = () => {
   return (
-    <Fragment>
+    <div>
       <weatherContext.Consumer>
         {(contetxProps) => {
           const { city, setCity, refCity } = contetxProps;
           return (
             <section>
-              <form onSubmit={(e) => searchCity(e, contetxProps)}>
-                <input
+              <Form onSubmit={(e) => searchCity(e, contetxProps)}>
+                <Form.Control
+                  className=" w-100 mt-4 mb-2"
                   type="text"
                   placeholder="EnterCity"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   ref={refCity}
                 />
-                <input type="submit" value="Search" />
-              </form>
+                <Row className="justify-content-center">
+                  <Button className="w-25 text-light btn-success" type="submit">
+                    Search
+                  </Button>
+                </Row>
+              </Form>
             </section>
           );
         }}
       </weatherContext.Consumer>
-    </Fragment>
+    </div>
   );
 };
 export default WeatherForm;
