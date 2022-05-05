@@ -4,7 +4,7 @@ import { BrowserRouter, NavLink, Switch, Route } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 
 import Main from "./Main/Main";
-import About from "./About";
+import About from "./About/About";
 
 const NavbarMenu = () => {
   const NavLinkClass = ["text-decoration-none text-light fw-bold"];
