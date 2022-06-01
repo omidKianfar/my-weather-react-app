@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 
 import { weatherContext } from "../../Hooks/Context";
 import { Focus } from "../../Tools/Focus";
-import NavbarMenu from "./Navbar";
+import NavbarMenu from "./Navbar/Navbar";
 
 function Layout() {
   const [city, setCity] = useState("");

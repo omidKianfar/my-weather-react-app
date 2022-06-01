@@ -4,6 +4,7 @@ import sunIcon from "../components/Weather/Img/brightness-high.svg";
 import cloudIcon from "../components/Weather/Img/cloud.svg";
 import snowIcon from "../components/Weather/Img/cloud-drizzle.svg";
 
+// How weather and its icon
 export const Sky = ({ weather, setSky, setHowSky }) => {
   useEffect(() => {
     if (weather.main) {

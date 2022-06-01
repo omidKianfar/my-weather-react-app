@@ -13,6 +13,7 @@ const Main = () => {
 
   return (
     <main
+      // Change background picture with temperature
       className={
         weather.main
           ? weather.main.temp >= 273
@@ -27,6 +28,7 @@ const Main = () => {
             <WeatherForm />
           </Col>
         </Row>
+
         <Row className="justify-content-center">
           <Col sm={12} md={8}>
             <WeatherList />

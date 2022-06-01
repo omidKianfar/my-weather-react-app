@@ -1,7 +1,6 @@
 import { Form, Row, Button } from "react-bootstrap";
 
 import { weatherContext } from "../../Hooks/Context";
-
 import { searchCity } from "../../Tools/SearchCity";
 
 const WeatherForm = () => {
@@ -10,6 +9,7 @@ const WeatherForm = () => {
       <weatherContext.Consumer>
         {(contetxProps) => {
           const { city, setCity, refCity } = contetxProps;
+
           return (
             <section>
               <Form onSubmit={(e) => searchCity(e, contetxProps)}>
@@ -21,6 +21,7 @@ const WeatherForm = () => {
                   onChange={(e) => setCity(e.target.value)}
                   ref={refCity}
                 />
+
                 <Row className="justify-content-center">
                   <Button className="w-25 text-light btn-success" type="submit">
                     Search

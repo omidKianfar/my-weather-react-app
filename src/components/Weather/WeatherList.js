@@ -9,10 +9,13 @@ const WeatherList = () => {
   const contextProps = useContext(weatherContext);
   const { weather, sky, HowSky } = contextProps;
 
+  // How sky and its icon
   Sky(contextProps);
 
+  // Bootstrap icons
   const textClass = ["text-center"];
   const borderClass = ["border border-3 rounded"];
+
   return (
     <div>
       {console.log(weather)}
@@ -28,16 +31,22 @@ const WeatherList = () => {
 
           <Row className="justify-content-center ">
             <Col sm={12} md={6}>
+              {/* Sky icon */}
               <img src={sky} alt="" width={75} />
+
+              {/* How sky  */}
               <p className="fw-bold">{HowSky}</p>
             </Col>
           </Row>
+
+          {/* Wheater temperature */}
           <Row
-            className={`${borderClass} fw-bold bg-light pt-3 m-2  border-dark `}
+            className={`${borderClass} fw-bold bg-light pt-3 m-2 border-dark `}
           >
             <Col>
               <p>{Math.round(weather.main.temp - 273)}° centigrade </p>
             </Col>
+
             <Col>
               <p>{Math.round(weather.main.temp)}° Celsius</p>
             </Col>

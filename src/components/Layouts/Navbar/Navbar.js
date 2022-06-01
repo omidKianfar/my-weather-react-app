@@ -3,14 +3,14 @@ import { Fragment } from "react";
 import { BrowserRouter, NavLink, Switch, Route } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 
-import Main from "./Main/Main";
-import About from "./About/About";
+import Main from "../Main/Main";
+import About from "../About/About";
 
 const NavbarMenu = () => {
   const NavLinkClass = ["text-decoration-none text-light fw-bold"];
   return (
     <BrowserRouter>
-      <Fragment>
+      <div>
         <Navbar className=" shadow" bg="dark" variant="dark">
           <Container>
             <Nav className="me-auto">
@@ -32,7 +32,7 @@ const NavbarMenu = () => {
           <Route exact path="/" component={Main} />
           <Route exact path="/about" component={About} />
         </Switch>
-      </Fragment>
+      </div>
     </BrowserRouter>
   );
 };
