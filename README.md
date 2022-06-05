@@ -9,26 +9,23 @@ Weather App design make with react.js and react-bootstrap
   2. CSS Module
   3. Flexbox
   4. React-Bootstrap
-  5. Bootstrap Icon
-  6. React
-      1. ES6 
-      2. Jsx
-      3. Condition
-      4. Event handler
-      5. Function Component
-      6. Fragment
-      7. Hooks:
-           useState,
-           useRef,
-           useEffect,
-           useContext  
-  5. React-router
-  6. Restfull Api
-  7. Axios
+  5. Bootstrap Icons
+  6. ES6 
+  7. React
+      1. Jsx
+      2. Event handler
+      3. Fragment
+      4. Ref
+      5. Hooks
+      6. Context API  
+  8. React-router
+  9. Axios
+  10. Restfull Api
+  
 # Install
   1. Clone project
   
-    https://github.com/omidKianfar/my-weather-react-app.git
+    git clone https://github.com/omidKianfar/my-weather-react-app.git
     
   2. Install dependencies
 
